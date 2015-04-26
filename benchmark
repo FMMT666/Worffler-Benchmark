@@ -1,36 +1,56 @@
 #!/bin/bash
 
+
+# Keep the output data file? Set to yes/no.
+KEEPOUTFILE=no
+
+# Create an MD5 sum via md5sum? Set to yes/no.
+CREATEMD5=yes
+
+
+##############################################################################
+##############################################################################
 TESTFILE=zdata/numbers.txt
 RESFILE=results.log
+OUTFILE=data
 
-OUTFILE=data.txt
-#OUTFILE=/dev/null
 
-rm $OUTFILE
+if [ "$CREATEMD5" == "yes" ]; then echo "---------" >> ${OUTFILE}.md5; fi
 echo "---------" | tee -a $RESFILE
-echo "$(whoami) on $(uname -n)" | tee -a $RESFILE
 date | tee -a $RESFILE
+echo "$(whoami) on $(uname -n)" | tee -a $RESFILE
+awk 'END {print "Processing " NR " lines:\n"}' $TESTFILE | tee -a $RESFILE
 
 #Maybe a little CPU and HDD/SSD info would be helpful?
 #cat /proc/cpuinfo | grep "model name" | tee -a $RESFILE
 
 # Lua
-( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &
+( while ( true ); do ls -la --color -h "${OUTFILE}_lua"; sleep 1; done ) &
 SECONDS=0
-lua/shuffle.lua $TESTFILE $TESTFILE > $OUTFILE
+lua/shuffle.lua $TESTFILE $TESTFILE > ${OUTFILE}_lua
 echo "Lua   : ${SECONDS}s" | tee -a $RESFILE
 kill $!
+if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_lua >> ${OUTFILE}.md5; fi
+if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_lua; fi
 
 # C
-( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &
+( while ( true ); do ls -la --color -h "${OUTFILE}_c"; sleep 1; done ) &
 SECONDS=0
-c/shuffle $TESTFILE $TESTFILE > $OUTFILE
+c/shuffle $TESTFILE $TESTFILE > ${OUTFILE}_c
 echo "C     : ${SECONDS}s" | tee -a $RESFILE
 kill $!
+if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_c >> ${OUTFILE}.md5; fi
+if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_c; fi
 
 # Python
-( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &
+( while ( true ); do ls -la --color -h "${OUTFILE}_py"; sleep 1; done ) &
 SECONDS=0
-python/shuffle.py $TESTFILE $TESTFILE > $OUTFILE
+python/shuffle.py $TESTFILE $TESTFILE > ${OUTFILE}_py
 echo "Python: ${SECONDS}s" | tee -a $RESFILE
 kill $!
+if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_py >> ${OUTFILE}.md5; fi
+if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_py; fi
+
+
+
+echo "" | tee -a $RESFILE

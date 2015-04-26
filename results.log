@@ -1,24 +1,36 @@
 ---------
-askr on LinAx2
 So 26. Apr 15:03:01 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
 Lua   : 38s
 C     : 10s
 Python: 32s
+
 ---------
-askr on LinAx2
 So 26. Apr 15:17:29 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
 Lua   : 39s
 C     : 8s    -> strtok() removed
 Python: 30s
+
 ---------
-askr on LinAx2
 So 26. Apr 16:09:36 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
 Lua   : 31s   -> io.lines() instead of io.read()
 C     : 8s
 Python: 30s
+
 ---------
-askr on LinAx2
 So 26. Apr 16:20:55 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
 Lua   : 31s
 C     : 8s
 Python: 22s   -> one sys.stdout.write() instead of two
+

@@ -31,6 +31,16 @@ the ultimate fun :-)
  - C
  - ...
 
+
+### Requirements
+
+ - Linux
+ - installed Lua interpreter
+ - installed Python interpreter
+ - installed gcc
+ - md5sum (if enabled in the "benchmark" Bash script
+ - ...
+ 
  
 ### Usage
 
@@ -48,6 +58,38 @@ the ultimate fun :-)
  
  This number file, as well as a tiny Lua script to generate a new one,
  can be found in the "zdata" directory.
+
+ With the default settings, two files will be created:
+ 
+ a) "data.md5", to make sure newly generated code creates the right output
+ 
+    ---------
+    ea67db580bed73b377ffdab5a016f960  data_lua
+    ea67db580bed73b377ffdab5a016f960  data_c
+    ea67db580bed73b377ffdab5a016f960  data_py
+
+ b) "results.log"
+ 
+    ---------
+    So 26. Apr 16:09:36 CEST 2015
+    askr on LinAx2
+    Processing 8000 lines:
+    
+    Lua   : 31s
+    C     : 8s
+    Python: 30s
+    
+    ---------
+    So 26. Apr 16:20:55 CEST 2015
+    askr on LinAx2
+    Processing 8000 lines:
+    
+    Lua   : 31s
+    C     : 8s
+    Python: 22s
+
+
+  New output is always appended to these two files and they are never deleted.
 
 
 ---

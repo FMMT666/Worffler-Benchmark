@@ -23,24 +23,10 @@ if fin2 == nil then
 end
 
 
-local word1
-local word2
 
-while 1 do
-
-  word1 = fin1:read("*l")
-  if word1 == nil then
-    break
-  end
-
-  while 1 do
-    word2 = fin2:read("*l")
-    if word2 == nil then
-      fin2:seek("set",0)
-      break
-    end
-
-    io.write( word1 .. word2 .. "\n" )
-    
-  end
+for line1 in fin1:lines() do
+	for line2 in fin2:lines() do
+		io.write( line1 .. line2 .. "\n" )
+	end
+	fin2:seek( "set", 0 );
 end

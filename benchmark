@@ -8,6 +8,10 @@ OUTFILE=data.txt
 
 rm $OUTFILE
 echo "---------" | tee -a $RESFILE
+date | tee -a $RESFILE
+
+#Maybe a little CPU and HDD/SSD info would be helpful?
+#cat /proc/cpuinfo | grep "model name" | tee -a $RESFILE
 
 # Lua
 ( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &

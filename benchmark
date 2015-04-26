@@ -8,6 +8,7 @@ OUTFILE=data.txt
 
 rm $OUTFILE
 echo "---------" | tee -a $RESFILE
+echo "$(whoami) on $(uname -n)" | tee -a $RESFILE
 date | tee -a $RESFILE
 
 #Maybe a little CPU and HDD/SSD info would be helpful?

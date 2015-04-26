@@ -18,8 +18,12 @@ Because the size of the files is in the giga to tera range, the rules are simple
   - print to stdout
   - rewind file #2
   - read next line from #1 and repeat
- 
- 
+
+
+As it turned out, squeezing every last bit of performance out of the code is
+the ultimate fun :-)
+
+
 ### Supported Curiosities
 
  - Lua

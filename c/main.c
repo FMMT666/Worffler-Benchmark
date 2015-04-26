@@ -31,9 +31,8 @@ int main( int argc, char **argv )
     {
       if( !fgets( line2, sizeof(line2), fin2 ) )
         break;
-      strtok( line2, "\n");
     
-      fprintf( stdout, "%s%s\n", line1, line2 );
+      fprintf( stdout, "%s%s", line1, line2 );
     }
     
     rewind( fin2 );

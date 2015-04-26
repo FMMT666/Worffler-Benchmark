@@ -45,11 +45,8 @@ the ultimate fun :-)
 ### Usage
 
  The compilatiom, if necessary, is not yet built-in globally.  
- For now, you need to manually create
- 
- - the C executable, by typing "make" in the "c" directory,
- - ...
-
+ For now, you need to manually create the C executable, by typing "make" in the
+ "c" directory,
 
  After compiling, a complete benchmark can be performed by executing the
  bash script, guess what, "benchmark", in the root directory.

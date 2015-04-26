@@ -16,9 +16,7 @@ except:
 for line1 in fin1:
 
   for line2 in fin2:
-  
-    sys.stdout.write( line1.strip("\n") )
-    sys.stdout.write( line2 )
+    sys.stdout.write( line1.strip("\n") + line2 )
 
   fin2.seek(0)
 

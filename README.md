@@ -34,8 +34,9 @@ Because the size of the files is in the giga to tera range, the rules are simple
  For now, you need to manually create
  
  - the C executable, by typing "make" in the "c" directory,
- - ...*insert new language here*...
- 
+ - ...
+
+
  After compiling, a complete benchmark can be performed by executing the
  bash script, guess what, "benchmark", in the root directory.
 

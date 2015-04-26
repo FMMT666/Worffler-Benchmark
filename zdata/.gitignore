@@ -1,0 +1,5 @@
+*
+*.*
+!.gitignore
+!makeNumbers.lua
+!numbers.txt

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+TESTFILE=zdata/numbers.txt
+RESFILE=results.log
+
+OUTFILE=data.txt
+#OUTFILE=/dev/null
+
+rm $OUTFILE
+echo "---------" | tee -a $RESFILE
+
+# Lua
+( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &
+SECONDS=0
+lua/shuffle.lua $TESTFILE $TESTFILE > $OUTFILE
+echo "Lua   : ${SECONDS}s" | tee -a $RESFILE
+kill $!
+
+# C
+( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &
+SECONDS=0
+c/shuffle $TESTFILE $TESTFILE > $OUTFILE
+echo "C     : ${SECONDS}s" | tee -a $RESFILE
+kill $!
+
+# Python
+( while ( true ); do ls -la --color -h "$OUTFILE"; sleep 1; done ) &
+SECONDS=0
+python/shuffle.py $TESTFILE $TESTFILE > $OUTFILE
+echo "Python: ${SECONDS}s" | tee -a $RESFILE
+kill $!

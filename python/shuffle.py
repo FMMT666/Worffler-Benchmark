@@ -3,7 +3,6 @@
 import sys
 
 if len( sys.argv ) < 3:
-  print"mooop"
   sys.exit(-1)
 
 try:

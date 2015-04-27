@@ -9,7 +9,8 @@ A wordlist shuffler experiment in several programming languages.
 ### Wat?
 
 While working on a syllables based wordlist generator and shuffler,
-I just became curious about the performance of different programming languages.
+I just became curious about the disk-read and string concatenation performance
+of different programming languages.
 
 Because the size of the files is in the giga to tera range, the rules are simple:
 
@@ -35,10 +36,10 @@ the ultimate fun :-)
 ### Requirements
 
  - Linux
- - installed Lua interpreter
- - installed Python interpreter
+ - installed Lua 5.2 interpreter
+ - installed Python 2.7/3.x interpreter
  - installed gcc
- - md5sum (if enabled in the "benchmark" Bash script
+ - md5sum (if enabled in the "benchmark" Bash script)
  - ...
  
  

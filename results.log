@@ -34,3 +34,13 @@ Lua   : 31s
 C     : 8s
 Python: 22s   -> one sys.stdout.write() instead of two
 
+---------
+Mo 27. Apr 22:33:32 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
+Lua    : 31s
+C      : 8s
+Python2: 21s
+Python3: 35s
+

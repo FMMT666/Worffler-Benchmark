@@ -28,7 +28,7 @@ the ultimate fun :-)
 ### Supported Curiosities
 
  - Lua
- - Python
+ - Python 2/3
  - C
  - ...
 
@@ -37,10 +37,12 @@ the ultimate fun :-)
 
  - Linux
  - installed Lua 5.2 interpreter
- - installed Python 2.7/3.x interpreter
+ - installed Python 2.7/3.x interpreter (*1*)
  - installed gcc
  - md5sum (if enabled in the "benchmark" Bash script)
  - ...
+
+ (*1*) For now, the benchmark script expects the executables "python2" and "python3".
  
  
 ### Usage
@@ -76,21 +78,24 @@ the ultimate fun :-)
     askr on LinAx2
     Processing 8000 lines:
     
-    Lua   : 31s
-    C     : 8s
-    Python: 30s
+    Lua    : 31s
+    C      : 8s
+    Python2: 30s
+    Python3: 42s
     
     ---------
     So 26. Apr 16:20:55 CEST 2015
     askr on LinAx2
     Processing 8000 lines:
     
-    Lua   : 31s
-    C     : 8s
-    Python: 22s
+    Lua    : 31s
+    C      : 8s
+    Python2: 22s
+    Python3: 35s
 
 
-  New output is always appended to these two files and they are never deleted.
+  New output is always appended to these two files and they are never deleted.  
+  This comes in handy if one manages to improve the code to faster (or worse).
 
 
 ---

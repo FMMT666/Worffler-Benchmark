@@ -2,7 +2,7 @@
 
 
 # Keep the output data file? Set to yes/no.
-KEEPOUTFILE=yes
+KEEPOUTFILE=no
 
 # Create an MD5 sum via md5sum? Set to yes/no.
 CREATEMD5=yes

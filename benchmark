@@ -27,7 +27,7 @@ awk 'END {print "Processing " NR " lines:\n"}' $TESTFILE | tee -a $RESFILE
 # Lua
 ( while ( true ); do ls -la --color -h "${OUTFILE}_lua"; sleep 1; done ) &
 SECONDS=0
-lua/shuffle.lua $TESTFILE $TESTFILE > ${OUTFILE}_lua
+lua lua/shuffle.lua $TESTFILE $TESTFILE > ${OUTFILE}_lua
 echo "Lua    : ${SECONDS}s" | tee -a $RESFILE
 kill $!
 if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_lua >> ${OUTFILE}.md5; fi

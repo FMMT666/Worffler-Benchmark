@@ -5,6 +5,7 @@
 !lua
 !python
 !elixir
+!elixir/**
 !zdata
 !README.md
 !benchmark

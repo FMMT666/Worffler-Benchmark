@@ -64,5 +64,16 @@ if type python3 &> /dev/null; then
   if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_py3; fi
 fi
 
+#Elixir
+cd elixir
+mix compile
+( while ( true ); do ls -la --color -h "../${OUTFILE}_elixir"; sleep 1; done ) &
+SECONDS=0
+mix run -e "WorfflerRaw.start '../$TESTFILE', '../$TESTFILE', '../${OUTFILE}_elixir' "
+cd ..
+echo "Elixir : ${SECONDS}s" | tee -a $RESFILE
+kill $!
+if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_elixir >> ${OUTFILE}.md5; fi
+if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_elixir; fi
 
 echo "" | tee -a $RESFILE

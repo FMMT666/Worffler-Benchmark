@@ -30,6 +30,7 @@ the ultimate fun :-)
  - Lua
  - Python 2/3
  - C
+ - Elixir
  - ...
 
 
@@ -39,6 +40,7 @@ the ultimate fun :-)
  - installed Lua 5.2 interpreter
  - installed Python 2.7/3.x interpreter (*1*)
  - installed gcc
+ - installed [Elixir](http://elixir-lang.org)
  - md5sum (if enabled in the "benchmark" Bash script)
  - ...
 

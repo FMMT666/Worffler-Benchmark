@@ -12,14 +12,37 @@ While working on a syllables based wordlist generator and shuffler,
 I just became curious about the disk-read and string concatenation performance
 of different programming languages.
 
-Because the size of the files is in the giga to tera range, the rules are simple:
+Because the size of the files is in the giga to tera range,
+**they cannot (completely) be loaded into memory**, hence the rules are:
 
   - read one line from file #1
   - append all lines from file #2
   - print to stdout
   - rewind file #2
   - read next line from #1 and repeat
+  
+Example:
 
+    FILE1  FILE2
+  
+      a      a
+      b      b
+      c      c
+      d      d
+    
+    RESULT:
+  
+      aa
+      ab
+      ac
+      ad
+      ba
+      bb
+      ...
+      dd
+
+
+If you need to buffer something, please make sure it its into memory!
 
 As it turned out, squeezing every last bit of performance out of the code is
 the ultimate fun :-)
@@ -65,7 +88,9 @@ the ultimate fun :-)
     ---------
     ea67db580bed73b377ffdab5a016f960  data_lua
     ea67db580bed73b377ffdab5a016f960  data_c
-    ea67db580bed73b377ffdab5a016f960  data_py
+    ea67db580bed73b377ffdab5a016f960  data_py2
+    ea67db580bed73b377ffdab5a016f960  data_py3
+    ea67db580bed73b377ffdab5a016f960  data_elixir
 
 
  b) "results.log"
@@ -82,18 +107,19 @@ the ultimate fun :-)
     Python3: 42s
     
     ---------
-    So 26. Apr 16:20:55 CEST 2015
+    Mo 11. Mai 21:38:21 CEST 2015
     askr on LinAx2
     Processing 8000 lines:
     
-    Lua    : 31s
+    Lua    : 30s
     C      : 8s
-    Python2: 22s
-    Python3: 35s
+    Python2: 20s
+    Python3: 36s
+    Elixir : 150s
 
 
   New output is always appended to these two files and they are never deleted.  
-  This comes in handy if one manages to improve the code to faster (or worse).
+  This comes in handy if one manages to improve the code to be faster (or worse).
 
 
 ---

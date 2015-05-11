@@ -2,7 +2,7 @@
 Worffler Benchmark
 ==================
 
-A wordlist shuffler experiment in several programming languages.  
+A wordlist shuffler experiment in several programming languages.
 
 ---
 
@@ -30,6 +30,7 @@ the ultimate fun :-)
  - Lua
  - Python 2/3
  - C
+ - CPP
  - Elixir
  - ...
 
@@ -39,29 +40,29 @@ the ultimate fun :-)
  - Linux
  - installed Lua 5.2 interpreter
  - installed Python 2.7/3.x interpreter (*1*)
- - installed gcc
+ - installed gcc/g++
  - installed [Elixir](http://elixir-lang.org)
  - md5sum (if enabled in the "benchmark" Bash script)
  - ...
 
  (*1*) For now, the benchmark script expects the executables "python2" and "python3".
- 
- 
+
+
 ### Usage
 
  A complete benchmark can be performed by executing the bash script,
  guess what, "benchmark", in the root directory.
 
  By default, a list of numbers (0..7999) is concatenated to each other.
- 
+
  This number file, as well as a tiny Lua script to generate a new one,
  can be found in the "zdata" directory.
 
  With the default settings, two files will be created:
- 
+
  a) "data.md5", to make sure newly generated code creates the right output
- 
-     
+
+
     ---------
     ea67db580bed73b377ffdab5a016f960  data_lua
     ea67db580bed73b377ffdab5a016f960  data_c
@@ -69,30 +70,30 @@ the ultimate fun :-)
 
 
  b) "results.log"
- 
-    
+
+
     ---------
     So 26. Apr 16:09:36 CEST 2015
     askr on LinAx2
     Processing 8000 lines:
-    
+
     Lua    : 31s
     C      : 8s
     Python2: 30s
     Python3: 42s
-    
+
     ---------
     So 26. Apr 16:20:55 CEST 2015
     askr on LinAx2
     Processing 8000 lines:
-    
+
     Lua    : 31s
     C      : 8s
     Python2: 22s
     Python3: 35s
 
 
-  New output is always appended to these two files and they are never deleted.  
+  New output is always appended to these two files and they are never deleted.
   This comes in handy if one manages to improve the code to faster (or worse).
 
 

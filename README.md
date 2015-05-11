@@ -42,7 +42,7 @@ Example:
       dd
 
 
-If you need to buffer something, please make sure it its into memory!
+If you need to buffer something, please make sure it fits into memory!
 
 As it turned out, squeezing every last bit of performance out of the code is
 the ultimate fun :-)

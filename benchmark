@@ -34,6 +34,7 @@ if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_lua >> ${OUTFILE}.md5; fi
 if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_lua; fi
 
 # C
+make -C c
 ( while ( true ); do ls -la --color -h "${OUTFILE}_c"; sleep 1; done ) &
 SECONDS=0
 c/shuffle $TESTFILE $TESTFILE > ${OUTFILE}_c

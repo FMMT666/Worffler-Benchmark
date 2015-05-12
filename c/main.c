@@ -39,7 +39,6 @@ int main( int argc, char **argv )
   char* mmappedData2 = mmap(NULL, finSize2, PROT_READ, MAP_PRIVATE | MAP_POPULATE, fileNum2, 0);
   assert(mmappedData2 != NULL);
 
-
   char * startOne = mmappedData1;
   char * endOne = strchr(mmappedData1,'\n');
   while (endOne!=NULL)
@@ -50,10 +49,9 @@ int main( int argc, char **argv )
     char * endTwo = strchr(mmappedData2,'\n');
     while (endTwo!=NULL)
     {
-      int length2 = endTwo-startTwo+1;
-      memcpy(line + lengthOne, startTwo, length2);
-      line[lengthOne + length2 + 1] = 0;
-      fprintf(stdout, "%s", line);
+      int lengthTwo = endTwo-startTwo+1;
+      memcpy(line + lengthOne, startTwo, lengthTwo);
+      fwrite(line, 1 , lengthOne + lengthTwo, stdout);
       startTwo = endTwo+1;
       endTwo=strchr(endTwo+1,'\n');
     }

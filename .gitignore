@@ -2,8 +2,8 @@
 *.*
 !.gitignore
 !c
-!cpp
-!cpp/**
+!cpp-mem
+!cpp-mem/**
 !lua
 !python
 !elixir

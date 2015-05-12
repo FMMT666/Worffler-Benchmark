@@ -42,7 +42,9 @@ Example:
       dd
 
 
-If you need to buffer something, please make sure it fits into memory!
+If you need to buffer something, please make sure it **always** fits into memory!  
+Solutions that operate purely from RAM, e.g. programs that completely load the
+input files into memorym are now marked with **-mem**.
 
 As it turned out, squeezing every last bit of performance out of the code is
 the ultimate fun :-)
@@ -92,6 +94,7 @@ the ultimate fun :-)
     ea67db580bed73b377ffdab5a016f960  data_py2
     ea67db580bed73b377ffdab5a016f960  data_py3
     ea67db580bed73b377ffdab5a016f960  data_elixir
+    ea67db580bed73b377ffdab5a016f960  data_cpp-mem
 
 
  b) "results.log"
@@ -108,7 +111,7 @@ the ultimate fun :-)
     Python3: 42s
 
     ---------
-    Mo 11. Mai 21:38:21 CEST 2015
+    Mo 12. Mai 22:51:38 CEST 2015
     askr on LinAx2
     Processing 8000 lines:
     
@@ -117,6 +120,7 @@ the ultimate fun :-)
     Python2: 20s
     Python3: 36s
     Elixir : 150s
+    CPP-MEM: 3s
 
 
   New output is always appended to these two files and they are never deleted.  

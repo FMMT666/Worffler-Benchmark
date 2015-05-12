@@ -78,13 +78,15 @@ if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_elixir >> ${OUTFILE}.md5; f
 if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_elixir; fi
 
 # CPP
-make -C cpp
-( while ( true ); do ls -la --color -h "${OUTFILE}_cpp"; sleep 1; done ) &
+make -C cpp-mem
+( while ( true ); do ls -la --color -h "${OUTFILE}_cpp-mem"; sleep 1; done ) &
 SECONDS=0
-cpp/shuffle $TESTFILE $TESTFILE > ${OUTFILE}_cpp
-echo "CPP    : ${SECONDS}s" | tee -a $RESFILE
+cpp-mem/shuffle $TESTFILE $TESTFILE > ${OUTFILE}_cpp-mem
+echo "CPP-MEM: ${SECONDS}s" | tee -a $RESFILE
 kill $!
-if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_cpp >> ${OUTFILE}.md5; fi
-if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_cpp; fi
+if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_cpp-mem >> ${OUTFILE}.md5; fi
+if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_cpp-mem; fi
+
 
 echo "" | tee -a $RESFILE
+

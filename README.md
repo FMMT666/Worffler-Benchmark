@@ -2,7 +2,7 @@
 Worffler Benchmark
 ==================
 
-A wordlist shuffler experiment in several programming languages.  
+A wordlist shuffler experiment in several programming languages.
 
 ---
 
@@ -20,18 +20,18 @@ Because the size of the files is in the giga to tera range,
   - print to stdout
   - rewind file #2
   - read next line from #1 and repeat
-  
+
 Example:
 
     FILE1  FILE2
-  
+
       a      a
       b      b
       c      c
       d      d
-    
+
     RESULT:
-  
+
       aa
       ab
       ac
@@ -42,7 +42,7 @@ Example:
       dd
 
 
-If you need to buffer something, please make sure it **always** fits into memory!  
+If you need to buffer something, please make sure it **always** fits into memory!
 Solutions that operate purely from RAM, e.g. programs that completely load the
 input files into memorym are now marked with **-mem**.
 
@@ -114,7 +114,7 @@ the ultimate fun :-)
     Mo 12. Mai 22:51:38 CEST 2015
     askr on LinAx2
     Processing 8000 lines:
-    
+
     Lua    : 30s
     C      : 8s
     Python2: 20s
@@ -123,7 +123,7 @@ the ultimate fun :-)
     CPP-MEM: 3s
 
 
-  New output is always appended to these two files and they are never deleted.  
+  New output is always appended to these two files and they are never deleted.
   This comes in handy if one manages to improve the code to be faster (or worse).
 
 

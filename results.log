@@ -44,3 +44,26 @@ C      : 8s
 Python2: 21s
 Python3: 35s
 
+---------
+Mo 11. Mai 21:38:21 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
+Lua    : 30s
+C      : 8s
+Python2: 20s
+Python3: 36s
+Elixir : 150s -> initial turbo version from chrta
+
+---------
+Di 12. Mai 22:41:58 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
+Lua    : 31s
+C      : 8s
+Python2: 21s
+Python3: 37s
+Elixir : 171s
+CPP-MEM: 3s
+

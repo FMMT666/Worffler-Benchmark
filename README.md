@@ -88,13 +88,14 @@ over the intitial goal of just comparing several languages :-)
  a) "data.md5", to make sure newly generated code creates the right output
 
 
-    ---------
     ea67db580bed73b377ffdab5a016f960  data_lua
     ea67db580bed73b377ffdab5a016f960  data_c
+    ea67db580bed73b377ffdab5a016f960  data_c2
     ea67db580bed73b377ffdab5a016f960  data_py2
     ea67db580bed73b377ffdab5a016f960  data_py3
     ea67db580bed73b377ffdab5a016f960  data_elixir
     ea67db580bed73b377ffdab5a016f960  data_cpp-mem
+    ea67db580bed73b377ffdab5a016f960  data_cpp
 
 
  b) "results.log"

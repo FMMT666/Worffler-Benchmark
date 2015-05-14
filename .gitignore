@@ -3,6 +3,7 @@
 !.gitignore
 !c
 !c2
+!cpp
 !cpp-mem
 !cpp-mem/**
 !lua

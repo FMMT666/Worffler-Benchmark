@@ -15,7 +15,7 @@ RESFILE=results.log
 OUTFILE=data
 
 
-if [ "$CREATEMD5" == "yes" ]; then echo "---------" >> ${OUTFILE}.md5; fi
+if [ "$CREATEMD5" == "yes" ]; then echo "" > ${OUTFILE}.md5; fi
 echo "---------" | tee -a $RESFILE
 date | tee -a $RESFILE
 echo "$(whoami) on $(uname -n)" | tee -a $RESFILE
@@ -102,7 +102,7 @@ make -C cpp
 ( while ( true ); do ls -la --color -h "${OUTFILE}_cpp"; sleep 1; done ) &
 SECONDS=0
 cpp/shuffle $TESTFILE $TESTFILE > ${OUTFILE}_cpp
-echo "CPP: ${SECONDS}s" | tee -a $RESFILE
+echo "CPP    : ${SECONDS}s" | tee -a $RESFILE
 kill $!
 if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_cpp >> ${OUTFILE}.md5; fi
 if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_cpp; fi

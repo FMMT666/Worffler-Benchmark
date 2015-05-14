@@ -67,3 +67,16 @@ Python3: 37s
 Elixir : 171s
 CPP-MEM: 3s
 
+---------
+Do 14. Mai 16:51:12 CEST 2015
+askr on LinAx2
+Processing 8000 lines:
+
+Lua    : 31s
+C      : 8s
+C2     : 2s
+Python2: 21s
+Python3: 37s
+Elixir : 171s
+CPP-MEM: 3s
+

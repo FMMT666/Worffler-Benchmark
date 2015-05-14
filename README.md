@@ -46,8 +46,8 @@ If you need to buffer something, please make sure it **always** fits into memory
 Solutions that operate purely from RAM, e.g. programs that completely load the
 input files into memorym are now marked with **-mem**.
 
-As it turned out, squeezing every last bit of performance out of the code is
-the ultimate fun :-)
+As it turned out, squeezing every last bit of performance out of the code, took
+over the intitial goal of just comparing several languages :-)
 
 
 ### Supported Curiosities
@@ -117,6 +117,7 @@ the ultimate fun :-)
     
     Lua    : 30s
     C      : 8s
+    C2     : 2s
     Python2: 20s
     Python3: 36s
     Elixir : 150s
@@ -126,6 +127,18 @@ the ultimate fun :-)
   New output is always appended to these two files and they are never deleted.  
   This comes in handy if one manages to improve the code to be faster (or worse).
 
+
+### Todo:
+
+ - Code is now too fast for a timing via Bash's SECONDS.
+   Should be done with 'time'.
+ - Rust
+ - Go
+ - Ruby
+ - Forth
+ - awk :-)
+ - ...
+   
 
 ---
 Have fun

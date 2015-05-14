@@ -45,10 +45,10 @@ if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_c; fi
 
 # C2
 make -C c2
-( while ( true ); do ls -la --color -h "${OUTFILE}_c"; sleep 1; done ) &
+( while ( true ); do ls -la --color -h "${OUTFILE}_c2"; sleep 1; done ) &
 SECONDS=0
 c2/shuffle $TESTFILE $TESTFILE > ${OUTFILE}_c2
-echo "C2      : ${SECONDS}s" | tee -a $RESFILE
+echo "C2     : ${SECONDS}s" | tee -a $RESFILE
 kill $!
 if [ "$CREATEMD5" == "yes" ]; then md5sum ${OUTFILE}_c2 >> ${OUTFILE}.md5; fi
 if [ "$KEEPOUTFILE" == "no" ]; then rm ${OUTFILE}_c2; fi
